@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>BanderBytes | Checkout</title>
+        <meta name="description" content="This is the description">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" />
+        <script src="store.js" async></script>
+    </head>
+    <body onload="checkout()"> 
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <h1 >BanderBytes</h1>
+        </header>
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="checkout-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price purchaseTotal"></span>
+            </div>
+            
+            <!-- action="thank-you.html" -->
+            <h2 class="section-header">Checkout</h2>
+            <p class ="cart-header centerText">Fill out the form below to send your response.</p>
+            
+            <form name="submit-to-google-sheet" class="mainForm" id='checkoutForm' action="feedback.html">
+                <label for="myName">Name:</label>
+                <input name="name" id="myName" placeholder= "Your name please" type="text" required>
+                <label for="myEmail">E-mail:</label>
+                <input name="email" id="myEmail" placeholder= "Your email please" type="email" required>
+                
+                <button id=mySubmit type="submit" class="btn btn-primary btn-purchase">PURCHASE</button>
+            </form>
+
+            <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbzNJM-FF5XfaTvW3IuPHdmWanMMQ7WI8t-MwmyVJQXiwbjFWkWn9JvTmrfBo1V_63_Igg/exec'
+                const form = document.forms['submit-to-google-sheet']
+              
+                form.addEventListener('submit', e => {
+                  e.preventDefault()
+                  alert("Order Sent!\nWait to be redirected to the Feedback page")
+                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => window.location.replace("feedback.html"))
+                    .catch(error => console.error('Error!', error.message))
+                })
+                //console.log('Success!', response)
+            </script>
+              
+            
+              
+
+
+        </section>
+    </body>
+    <footer class="main-footer">
+        
+        <p>Copyright @ 2021 Computer Science in Collaboration with Culinary Arts</p>
+        <p>grant.cieslack@evsck12.com | joyce.tsiga@evsck12.com</p>
+     
+    </footer>
+</html>

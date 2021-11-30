@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>BanderBytes | Store</title>
+        <meta name="description" content="This is the description">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css" />
+        <script src="store.js" async></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="main-nav nav">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+
+                    <li><a href="feedback.html">FEEDBACK</a></li>                 
+                    
+                </ul>
+            </nav>
+            <h1 >BanderBytes</h1>
+        </header>
+        <section class="container content-section">
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Sugar Cookie</span>
+                    <!-- <div class="tooltip">Hover over me
+                        <span class="tooltiptext">Tooltip text</span>
+                      </div>  -->
+                    <div id="sugarCookie" class="shop-item-image"></div>
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$0.50</span>
+                    </div>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Chocolate Chip</span>
+                        <!-- <div class="tooltip">Hover over me
+                            <span class="tooltiptext">Tooltip text</span>
+                          </div>  -->
+                        <div id="chocChip" class="shop-item-image"> </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$0.50</span>
+                        </div>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                    <div class="shop-item">
+                        <span class="shop-item-title">Oatmeal Cookie</span>
+                        <!-- <div class="tooltip">Hover over me
+                            <span class="tooltiptext">Tooltip text</span>
+                          </div>  -->
+                        <div id="oatCookie" class="shop-item-image"> </div>
+                        <div class="shop-item-details">
+                            <span class="shop-item-price">$.50</span>
+                        </div>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+            </div>
+        </div>
+        </section>
+        <section class="container content-section cartArea">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0.00</span>
+            </div>
+            <!-- action="checkout.html" -->
+            <form class="mainForm" method="post" action="checkout.html">
+                <button id=mySubmit  type="submit" class="btn btn-primary btn-checkout">CHECKOUT</button>
+            </form>
+
+        </section>
+        
+        
+        
+    </body>
+    <footer class="main-footer">
+    
+        <p>Copyright @ 2021 Computer Science in Collaboration with Culinary Arts</p>
+        <p>grant.cieslack@evsck12.com | joyce.tsiga@evsck12.com</p>
+     
+    </footer>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-withh, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script src="google-apps-scripts.js" src="store.js"></script>
+
+          <title>BanderBytes</title>
+     </head>
+     <header>
+     
+          
+     </header>
+     <header class="main-header">
+        <nav class="main-nav nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                
+                <li><a href="request.html">Feedback</a></li>
+                
+            </ul>
+        </nav>
+        <h1><a href="index.html">BanderBytes</a></h1>
+          
+          <main>
+              
+            <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+            <!-- Style The Contact Form How Ever You Prefer -->
+            <link rel="stylesheet" href="style.css">
+         
+           <form name="submit-to-google-sheet" class="gform pure-form pure-form-stacked">
+             <!-- change the form action to your script url -->
+            
+            <!-- Ask the user for their feedback-->>
+             <div class="form-elements">
+               <fieldset class="pure-group">
+                 <label for="name">How was you experience with our CSS? </label>
+                 <input id="name" class="request-form" name="experience" placeholder="" required />
+               </fieldset>
+         
+               <fieldset class="pure-group">
+                 <label for="message">Where there any issues or glitches? </label>
+                 <input name="issues" class="request-form" placeholder=""></input>
+               </fieldset>
+         
+               <fieldset class="pure-group">
+                 <label for="why"> Is there anything you would like to see implemented? </label>
+                 <input id="why" name="requests"  class="request-form"
+                 placeholder="" />
+               </fieldset>
+
+               <fieldset class="pure-group">
+                <label for="why"> What did you like most about our store? </label>
+                <input id="why" name="liked"  class="request-form"
+                placeholder="" />
+              </fieldset>
+
+              <fieldset class="pure-group">
+                <label for="why"> Did we meet your expectations? </label>
+                <input id="why" name="expectations"  class="request-form"
+                placeholder="" />
+              </fieldset>
+
+               <fieldset class="pure-group">
+                <label for="look"> How would you rate the design? </label>
+                <input name ="look" type="text" placeholder=" Design " list="look" required>
+                <datalist id="look">
+                  <option value="Could be better">
+                  <option value="It was Okay">
+                  <option value="Nice to look at">
+                  <option value="Good looking">
+                  <option value="Creative">
+                  </option>
+              </fieldset>
+
+              <fieldset class="pure-group">
+                <label for="usable"> How would you rate the store's usability? </label>
+                <input name ="usable" type="text" placeholder="Usability " list="usable" required>
+                <datalist id="usable">
+                  <option value="Bad">
+                  <option value="Ok">
+                  <option value="Good">
+                  <option value="great">
+                  <option value="Amazing">
+                  </option>
+              </fieldset>
+
+              <fieldset class="pure-group">
+                <label for="rating"> How would you rate us overall? </label>
+                <input name ="rating" type="text" placeholder="Overall Rating " list="rating" required>
+                <datalist id="rating">
+                  <option value="1 Star">
+                  <option value="2 Star">
+                  <option value="3 Star">
+                  <option value="4 Star">
+                  <option value="5 Star">
+                  </option>
+              </fieldset>
+         
+               <button type="submit" class="button-success pure-button button-xlarge">
+                 <i class="fa fa-paper-plane" action=""></i>&nbsp;Send</button>
+             </div>
+
+             <script>
+              const scriptURL = 'https://script.google.com/macros/s/AKfycbzyo9eI6n7QMGO-hJ6kcslPj_2Z9iCQL8GvhYjdhQXJY6qq6KJg6Qw9HBdzmm1wqguO/exec'
+              const form = document.forms['submit-to-google-sheet']
+            
+              form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                  .then(response => window.location.replace("index.html"))
+                  .catch(error => console.error('Error!', error.message))
+              })
+            </script>
+
+         </body>
+         </html>
+
+           </main>
+           <footer class="main-footer">
+            
+            <p>Copyright @ 2021 Computer Science in Collaboration with Culinary Arts</p>
+            <p>grant.cieslack@evsck12.com | joyce.tsiga@evsck12.com</p>
+         
+        </footer>
+</div>
+</html>   
